@@ -11,9 +11,9 @@ function ATTACHMENT:Stats(weapon)
     weapon.Recoil.Horizontal[1] = weapon.Recoil.Horizontal[1] * 0.7
     weapon.Recoil.Horizontal[2] = weapon.Recoil.Horizontal[2] * 0.7
     weapon.Primary.RPM = 900
-    weapon.ProjVelocity = 1900
+    weapon.ProjVelocity = 2200
     weapon.Clip1MaxSize = 50
-    weapon.Clip2MaxSize = 35
+    weapon.Clip2MaxSize = 40
 
     weapon.Firemodes[2] = {
         Name = "Alt Fire",
@@ -21,7 +21,7 @@ function ATTACHMENT:Stats(weapon)
 
             if self.AmmoRefreshC2 == false then
                 self.Clip1Size = self:Clip1()
-                self:SetClip1(self.Clip2Size || 35)
+                self:SetClip1(self.Clip2Size || 40)
             end
             self.AmmoRefreshC2 = true
             self.AmmoRefreshC1 = false

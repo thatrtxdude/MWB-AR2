@@ -37,9 +37,9 @@ SWEP.Primary.RPM = 750
 SWEP.CanChamberRound = false
 
 SWEP.Clip1MaxSize = 30
-SWEP.Clip2MaxSize = 4
+SWEP.Clip2MaxSize = 3
 
-SWEP.ProjVelocity = 6700
+SWEP.ProjVelocity = 4200
   
 SWEP.ParticleEffects = {
     ["MuzzleFlash"] = "ar2_muzzle_flash",
@@ -93,13 +93,15 @@ SWEP.Firemodes = {
 
             if self.AmmoRefreshC2 == false then
                 self.Clip1Size = self:Clip1()
-                self:SetClip1(self.Clip2Size || 4)
+                self:SetClip1(self.Clip2Size || 3)
             end
             self.AmmoRefreshC2 = true
             self.AmmoRefreshC1 = false
 
             self.Trigger = {
                 PressedSound = "weapons/cguard/charging.wav",
+                ReleasedSound = Sound("mw19.kilo433.fire.disconnector"),
+                PlayReleasedSoundRegardless = true,
                 Time = 0.690
             }
             self.PrimaryRoundsLoaded = self:Clip1()
@@ -217,8 +219,8 @@ SWEP.Shell = {
 }
 
 
-SWEP.DotAlpha = 0
-SWEP.FrameAlpha = 0
+--SWEP.DotAlpha = 0
+--SWEP.FrameAlpha = 0
 function SWEP:DrawHUD() 
     --surface.SetDrawColor(0, 255, 0, 127)
 	--surface.DrawLine(ScrW() * 0.5 - 50, ScrH() * 0.5, ScrW() * 0.5 + 50, ScrH() * 0.5)
