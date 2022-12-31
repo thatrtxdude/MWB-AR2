@@ -60,22 +60,14 @@ function ENT:PhysicsUpdate(phys)
 		
 		tr = util.TraceLine(trData)
 		if (tr.Hit) then
-			ParticleEffect("emp_ring_tiny", self:GetPos(), self:GetAngles())
-			self:EmitSound("weapons/shadowdark_mmod/shardcannon"..math.random(1, 4)..".mp3", 100, 100, 1, CHAN_AUTO) --"weapons/shadowdark_mmod/shardcannon"..math.random(1, 4)..".ogg"
-
-				local proj = ents.Create("sdrk_cmb_burstshot_flak")
-
-				local angles = self:GetAngles()
-
-
-				
-				proj.Weapon = self:GetOwner():GetActiveWeapon()
-
-				proj:SetPos(self:GetPos())
-				proj.IsWallHit = true
-				proj:SetAngles(angles)
-				proj:SetOwner(self:GetOwner())
-				proj:Spawn()
+			self:EmitSound("weapons/mortar/mortar_fire1.wav",100,110,0.3,CHAN_WEAPON)
+			ParticleEffect("emp_tiny", self:GetPos(), self:GetAngles())
+			local dmg = DamageInfo()
+			dmg:SetInflictor(self)
+			dmg:SetAttacker(self:GetOwner())
+			dmg:SetDamageType(DMG_BLAST + DMG_DISSOLVE + DMG_AIRBOAT)
+			dmg:SetDamage(50)
+			util.BlastDamageInfo(dmg, self:GetPos(), 70)
 			self:Remove()
 			return
 		end
