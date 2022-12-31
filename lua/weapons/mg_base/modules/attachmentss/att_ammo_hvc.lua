@@ -18,5 +18,5 @@ function ATTACHMENT:Stats(weapon)
     weapon.ViewModelOffsets.RecoilMultiplier = 4
     weapon.ProjVelocity = weapon.ProjVelocity * 4
     weapon.Clip1MaxSize = 10
-    weapon.Clip2MaxSize = 4
+    weapon.Clip2MaxSize = 2
 end

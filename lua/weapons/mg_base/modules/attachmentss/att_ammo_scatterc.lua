@@ -1,6 +1,5 @@
 ATTACHMENT.Base = "att_ammo"
 ATTACHMENT.Name = "Scatter Cartrigdes"
-ATTACHMENT.Model = Model("models/weapons/v_ara2.mdl")
 ATTACHMENT.Icon = Material("icons/icons/hl2_ar2/ar2_scattercartridge.png")
 local BaseClass = GetAttachmentBaseClass(ATTACHMENT.Base)
 
@@ -50,11 +49,3 @@ function ATTACHMENT:Stats(weapon)
         end 
     }
 end
-
-function ATTACHMENT:OverrideMaterial(path, mat)
-    return path, "scatter_"..mat 
-end
-
-function ATTACHMENT:OverrideWeaponMaterial(path, mat)
-    return path, "scatter_"..mat
-end 

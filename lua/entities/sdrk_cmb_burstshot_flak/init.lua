@@ -16,7 +16,7 @@ function ENT:Initialize()
 	--self:SetModel("models/props_c17/oildrum001.mdl")
 	self:SetVelocity(self:GetForward() * 100)
 
-	for i = 0,16,1 do 
+	for i = 0,11,1 do 
 		local proj = ents.Create("sdrk_cmb_swarmshot")
 
 		local angles = self:GetAngles()
