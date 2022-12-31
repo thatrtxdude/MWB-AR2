@@ -49,3 +49,11 @@ function ATTACHMENT:Stats(weapon)
         end 
     }
 end
+
+function ATTACHMENT:OverrideMaterial(path, mat)
+    return path, "scatter_"..mat 
+end
+
+function ATTACHMENT:OverrideWeaponMaterial(path, mat)
+    return path, "scatter_"..mat
+end 
