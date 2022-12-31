@@ -59,7 +59,7 @@ function ENT:PhysicsUpdate(phys)
 		local tr = util.TraceHull(trData)
 		
 		tr = util.TraceLine(trData)
-		if (tr.Hit) then
+		if (tr.Hit || !self:GetOwner():Alive()) then
 			self:EmitSound("weapons/mortar/mortar_fire1.wav",100,110,0.3,CHAN_WEAPON)
 			ParticleEffect("emp_tiny", self:GetPos(), self:GetAngles())
 			local dmg = DamageInfo()
