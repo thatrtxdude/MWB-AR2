@@ -22,9 +22,9 @@ function ENT:PhysicsUpdate(phys)
 	phys:SetPos(self.LastPos + phys:GetAngles():Forward() * (self.Projectile.Speed * FrameTime()) - (Vector(0, 0, self.m_gravity) * FrameTime()))
 
 	if self.NextAngUpdate <= CurTime() then
-		self.baseAngle.pitch = math.random(self.baseAngle.pitch - 4, self.baseAngle.pitch + 4)
-		self.baseAngle.roll = math.random(self.baseAngle.roll - 4, self.baseAngle.roll + 4)
-		self.baseAngle.yaw = math.random(self.baseAngle.yaw - 4, self.baseAngle.yaw + 4) 
+		self.baseAngle.pitch = math.random(self.baseAngle.pitch - 3, self.baseAngle.pitch + 3)
+		self.baseAngle.roll = math.random(self.baseAngle.roll - 3, self.baseAngle.roll + 3)
+		self.baseAngle.yaw = math.random(self.baseAngle.yaw - 3, self.baseAngle.yaw + 3) 
 		self.NextAngUpdate = CurTime() + 0.2
 	end
 
