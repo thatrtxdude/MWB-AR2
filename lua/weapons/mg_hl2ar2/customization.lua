@@ -1,6 +1,6 @@
 AddCSLuaFile()
 
-local function doSuppressorStats(self)
+function SWEP:doSuppressorStats()
     self.Primary.Sound = Sound("mw_ar2.FireS")
     self.Reverb = {
         RoomScale = 50000,
@@ -20,5 +20,5 @@ local function doSuppressorStats(self)
 end
 
 SWEP.Customization = {
-    {"att_perk","att_ammo_hvc","att_ammo_scatterc","att_ammo_hpc","att_ammo_lpc"}, --"att_ammo_suppressed",
+    {"att_perk","att_ammo_hvc","att_ammo_scatterc","att_ammo_hpc","att_ammo_lpc", "att_ammo_suppressed"}, --"att_ammo_suppressed",
 }

@@ -39,9 +39,8 @@ function ENT:PhysicsUpdate(phys)
 		self:Remove()
 	end
 
-
 	
-	if (!self.bCollided ) then
+	if (!self.bCollided) then
 		--Aim assist
 		if (GetConVar("mgbase_debug_projectiles"):GetInt() > 0) then
 			debugoverlay.Box(phys:GetPos(), -self.Maxs, self.Maxs, 0, Color(0, 200, 50, 10))

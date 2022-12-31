@@ -13,7 +13,7 @@ function ATTACHMENT:Stats(weapon)
     weapon.Recoil.Horizontal[1] = weapon.Recoil.Horizontal[1] * 1.6
     weapon.Recoil.Horizontal[2] = weapon.Recoil.Horizontal[2] * 1.6
     weapon.Primary.RPM = 400
-    weapon.ProjVelocity = 2000
+    weapon.ProjVelocity = 3700
     weapon.Clip1MaxSize = 25
     weapon.Clip2MaxSize = 2
 
@@ -42,7 +42,7 @@ function ATTACHMENT:Stats(weapon)
                 self.Projectile = {
                     Class = "sdrk_cmb_ball_highpower", --bullet entity class
                     Speed = self.ProjVelocity,
-                    Gravity = 20
+                    Gravity = 30
                 } 
             end)
             return "Firemode_Semi"

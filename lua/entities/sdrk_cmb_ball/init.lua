@@ -44,9 +44,9 @@ function ENT:PhysicsUpdate(phys)
 			dmg:SetInflictor(self)
 			dmg:SetAttacker(self:GetOwner())
 			dmg:SetDamageType(DMG_BLAST + DMG_DISSOLVE + DMG_AIRBOAT)
-			dmg:SetDamage(110)
+			dmg:SetDamage(130)
 
-			util.BlastDamageInfo(dmg, self:GetPos(), 210)
+			util.BlastDamageInfo(dmg, self:GetPos(), 240)
 			ParticleEffect("Generic_explo_emp_slow", self:GetPos(), self:GetAngles())
 			self:Remove()
 			return

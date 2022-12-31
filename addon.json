@@ -3,7 +3,10 @@
   "type": "weapon",
   "tags": [
     "fun",
-    "roleplay"
+    "roleplay",
+    "realism"
   ],
-  "ignore": []
+  "ignore": [
+    "*.otf"
+  ]
 }
