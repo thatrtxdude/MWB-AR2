@@ -1,5 +1,6 @@
 ATTACHMENT.Base = "att_ammo"
 ATTACHMENT.Name = "Scatter Cartrigdes"
+ATTACHMENT.Model = Model("models/weapons/v_ara2.mdl")
 ATTACHMENT.Icon = Material("icons/icons/hl2_ar2/ar2_scattercartridge.png")
 local BaseClass = GetAttachmentBaseClass(ATTACHMENT.Base)
 
