@@ -232,13 +232,18 @@ function SWEP:DrawHUD()
 
     if self:CanDrawCrosshair() then
 
+        local x, y = ScrW() * 0.5, ScrH() * 0.5
+        local vec = EyePos() + (self:GetOwner():EyeAngles() + self:GetOwner():GetViewPunchAngles()):Forward()
+        local cone = math.floor((vec + ( self:GetCone() * 0.1 * (self:GetOwner():EyeAngles() + self:GetOwner():GetViewPunchAngles()):Right() ) ):ToScreen().x)
+        local pos = vec:ToScreen()
+        
         local scale = ScrH()/1080
 
         self.DotAlpha = math.Clamp(self.DotAlpha + (FrameTime() * 300), 0,255)
         surface.SetDrawColor(255,255,255,self.DotAlpha)
 
         surface.SetMaterial(Material("hud/csdot.png"))
-        surface.DrawTexturedRect((ScrW() * 0.5) - (60 * scale), (ScrH() * 0.5) - (60 * scale), 120* scale, 120* scale) 
+        surface.DrawTexturedRect(pos.x - 60 * scale,pos.y - 60 * scale, 120* scale, 120* scale) 
 
         if self:HasFlag("Aiming") then 
             self.FrameAlpha = math.Clamp(self.FrameAlpha + (FrameTime() * 600), 0,255)
