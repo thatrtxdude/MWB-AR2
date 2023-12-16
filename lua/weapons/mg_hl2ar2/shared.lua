@@ -1,11 +1,16 @@
 AddCSLuaFile()
 game.AddParticles( "particles/not_ac_mw_handguns.pcf" )
 game.AddParticles( "particles/ar2tracers.pcf" )
+game.AddParticles( "particles/generic_explosions_with_more_sauce.pcf" )
 PrecacheParticleSystem("ar2_muzzle_flash")
 PrecacheParticleSystem("ar2b_tracer")
 PrecacheParticleSystem("AC_muzzle_pistol_suppressed")
 PrecacheParticleSystem("AC_muzzle_pistol_ejection")
 PrecacheParticleSystem("ar2_muzzle_smoke_b")
+PrecacheParticleSystem("cmb_ar2_ball")
+PrecacheParticleSystem("cmb_ar2_swarmshot")
+PrecacheParticleSystem("cmb_explo")
+PrecacheParticleSystem("emp_tiny")
 include("animations.lua")
 include("customization.lua")
 
@@ -37,9 +42,9 @@ SWEP.Primary.RPM = 750
 SWEP.CanChamberRound = false
 
 SWEP.Clip1MaxSize = 30
-SWEP.Clip2MaxSize = 4
+SWEP.Clip2MaxSize = 3
 
-SWEP.ProjVelocity = 6700
+SWEP.ProjVelocity = 4700
   
 SWEP.ParticleEffects = {
     ["MuzzleFlash"] = "ar2_muzzle_flash",
@@ -235,7 +240,7 @@ function SWEP:DrawHUD()
         surface.SetMaterial(Material("hud/csdot.png"))
         surface.DrawTexturedRect((ScrW() * 0.5) - (60 * scale), (ScrH() * 0.5) - (60 * scale), 120* scale, 120* scale) 
 
-        if self:GetIsAiming() then 
+        if self:HasFlag("Aiming") then 
             self.FrameAlpha = math.Clamp(self.FrameAlpha + (FrameTime() * 600), 0,255)
             surface.SetDrawColor(255,255,255,self.FrameAlpha)
             surface.SetMaterial(Material("hud/csframe.png"))
@@ -247,7 +252,7 @@ function SWEP:DrawHUD()
         self.DotAlpha = math.Clamp(self.DotAlpha - (FrameTime() * 600), 0,255)
     end
 
-    if (GetConVar("mgbase_hud_firemode"):GetBool() && !self:IsCustomizing()) then
+    if (GetConVar("mgbase_hud_firemode"):GetBool() && !self:HasFlag("Customizing")) then
 		self:DrawFiremode()
 	end
 end

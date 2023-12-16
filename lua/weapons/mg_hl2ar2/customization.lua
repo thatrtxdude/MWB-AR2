@@ -20,5 +20,5 @@ function SWEP:doSuppressorStats()
 end
 
 SWEP.Customization = {
-    {"att_perk","att_ammo_hvc","att_ammo_scatterc","att_ammo_hpc","att_ammo_lpc", "att_ammo_suppressed"}, --"att_ammo_suppressed",
+    {"att_perk","att_ammo_hvc","att_ammo_scatterc","att_ammo_hpc","att_ammo_lpc", "att_ammo_suppressed","att_perk_overtime"}, --"att_ammo_suppressed",
 }
